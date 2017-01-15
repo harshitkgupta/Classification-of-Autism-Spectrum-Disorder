@@ -1,0 +1,51 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Hamming Window\relax }}{11}{figure.caption.3}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Hertz Scale vs Mel Scale\relax }}{13}{figure.caption.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces MFCC Feature Extraction\relax }}{14}{figure.caption.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Signal resolution at different domains\relax }}{16}{figure.caption.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Spectrogram of autistic child\relax }}{17}{figure.caption.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Spectrogram of typical child\relax }}{17}{figure.caption.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Haar Wavelet\relax }}{18}{figure.caption.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Daubechies 4 Wavelet\relax }}{19}{figure.caption.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Decomposition filer on signal\relax }}{20}{figure.caption.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Scalogram of autistic child\relax }}{21}{figure.caption.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Scalogram of typical child\relax }}{21}{figure.caption.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Discrete Wavelet Transform\relax }}{22}{figure.caption.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Discrete Wavelet Packet Analysis\relax }}{22}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Hidden Markov Model\relax }}{28}{figure.caption.16}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Classification with MFCC features\relax }}{32}{figure.caption.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Classification with DWT/DWPA features\relax }}{34}{figure.caption.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Classification with HMM Model\relax }}{36}{figure.caption.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Classification with CNN\relax }}{39}{figure.caption.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Classification Results\relax }}{40}{figure.caption.21}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

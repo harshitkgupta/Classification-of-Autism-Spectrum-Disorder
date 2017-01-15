@@ -1,0 +1,5 @@
+//	$message = array("price" =>  'Now go to menu and Record your Speech sample ');
+//	send_push_notification($registatoin_ids,$message);
+//		$message = array("price" =>  'After that go to menu and Upload speech samples to server');
+//send_push_notification($registatoin_ids,$message);
+		echo $result;

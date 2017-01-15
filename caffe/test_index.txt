@@ -1,0 +1,4 @@
+ASD/F19.png 0
+TD/F19.png 1
+ASD/F20.png 0
+TD/F20.png 1

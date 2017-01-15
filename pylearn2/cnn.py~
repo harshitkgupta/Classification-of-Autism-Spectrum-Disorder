@@ -1,0 +1,90 @@
+import numpy as np
+import pandas as pd
+import sklearn
+
+train="""
+!obj:pylearn2.train.Train {
+    dataset: &train !obj:autism_dataset.AutismDataset {
+        path: 'train.csv',  
+             
+    },
+    model: !obj:pylearn2.models.mlp.MLP {
+        batch_size: 1,
+        input_space: !obj:pylearn2.space.Conv2DSpace {
+            shape:[1, 65000],            
+            num_channels: 1
+        },
+        layers: [ !obj:pylearn2.models.mlp.ConvRectifiedLinear {
+                     layer_name: 'h1',
+                     output_channels: 10,
+                     irange: .05,
+                     kernel_shape: [1, 100],
+                     kernel_stride: [1 ,50],
+                     pool_shape: [1 ,40],
+                     pool_stride: [1 ,20],
+                     max_kernel_norm: 1.9365
+                 }, 
+                  !obj:pylearn2.models.mlp.Softmax {
+                     max_col_norm: 1.9365,
+                     layer_name: 'y',
+                     n_classes: 2,
+                     istdev: .05
+                 }
+                ],
+    },
+    algorithm: !obj:pylearn2.training_algorithms.sgd.SGD {
+        
+        learning_rate: .01,
+        learning_rule: !obj:pylearn2.training_algorithms.learning_rule.Momentum {
+            init_momentum: .5
+        },
+        monitoring_dataset:
+             {
+                'train' : *train,
+                'valid' : !obj:autism_dataset.AutismDataset {
+                        path: 'valid.csv', 
+                                                                           
+                },
+                'test'  : !obj:autism_dataset.AutismDataset {
+                        path: 'test.csv',  
+                                                                             
+                }
+            },
+        cost: !obj:pylearn2.costs.cost.SumOfCosts { costs: [
+            !obj:pylearn2.costs.cost.MethodCost {
+                method: 'cost_from_X'
+            }, !obj:pylearn2.costs.mlp.WeightDecay {
+                coeffs: [ .00005, .00005 ]
+            }
+            ]
+        },
+        termination_criterion: !obj:pylearn2.termination_criteria.And {
+            criteria: [
+                !obj:pylearn2.termination_criteria.MonitorBased {
+                    channel_name: "valid_y_misclass",
+                    prop_decrease: 0.50,
+                    N: 2
+                },
+                !obj:pylearn2.termination_criteria.EpochCounter {
+                    max_epochs: 10
+                },
+            ]
+        },
+    },
+    extensions:
+        [ !obj:pylearn2.train_extensions.best_params.MonitorBasedSaveBest {
+             channel_name: 'valid_y_misclass',
+             save_path: "convolutional_network_best.pkl"
+        }, !obj:pylearn2.training_algorithms.learning_rule.MomentumAdjustor {
+            start: 1,
+            saturate: 10,
+            final_momentum: .99
+        }
+    ]
+}
+"""
+
+from pylearn2.config import yaml_parse
+train = yaml_parse.load(train)
+train.main_loop()
+

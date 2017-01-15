@@ -1,0 +1,2 @@
+export PATH=$PATH:~/Downloads/caffe-master/build/tools/
+caffe train -solver numbers_solver.prototxt  

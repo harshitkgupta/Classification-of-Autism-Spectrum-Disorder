@@ -1,0 +1,56 @@
+import sys
+import os
+import numpy as np
+import cPickle as pickle
+
+from pylearn2.utils import serial
+from theano import tensor as T
+from theano import function
+
+try:
+	model_path = sys.argv[1]
+	test_path = sys.argv[2]
+	out_path = sys.argv[3]
+except IndexError:
+	print "Usage: predict.py <model file> <test file> <output file>"
+	print "       predict.py saved_clf.pkl saved_tst.pkl results.csv\n"
+	quit()
+	
+print "loading model..."
+
+try:
+	model = serial.load(model_path)
+except Exception, e:
+	print model_path + "doesn't seem to be a valid model path, got this error when trying to load it:"
+	print e
+
+print "setting up symbolic expressions..."
+
+X = model.get_input_space().make_theano_batch()
+Y = model.fprop(X)
+Y = T.argmax(Y, axis=1)
+
+f = function([X], Y)
+
+print "loading data and predicting..."
+
+data = np.loadtxt( test_path, delimiter = ',', dtype = 'float64' )
+
+y = data[1:,-1]
+x = data[1:,:-1]
+x=np.reshape(x,(x.shape[0],1,x.shape[1],1))
+p = f(x)
+				
+
+		
+
+print "writing predictions..."
+
+out = open(out_path, 'w')
+out.write('predicted,true\n')
+
+for i in xrange(y.shape[0]):
+	
+	out.write('{},{}\n'.format( p[i],y[i]))
+	
+out.close()
